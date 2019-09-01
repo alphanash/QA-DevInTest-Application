@@ -13,7 +13,8 @@ Then(/^I should see the search field for (.*)$/, function (field) {
 });
 
 Then(/^I should see the sector link for (.*)$/, function (sector) {
-    // I initially built this as a single array listing all the sectors, but this is not the cucumber way as it "hides" the sector details in the code. That's fine for Dev and technical QA's, but it's not ideal for non-technical people who may want to confirm all the correct sectors have been cvered, so I moved them to the gherkin.
+    // I initially built this as a single array listing all the sectors, but this is not the cucumber way as it "hides" the sector details in the code. That's fine for Dev and technical QA's, but it's not ideal for non-technical people who may want to confirm all the correct sectors have been covered, so I moved them to the gherkin.
+    // Additional note. These tests should ideally run headless. Spinning up web browsers is good for debugging, but horribly ineffecient for actually running the tests.
     World.driver.findElement(By.css("#main > div.band.band--primary.band--primary--third.cf > div > section > div > div > ul > li.facet-links__link.facet-links__link--(' + sector + ').lap-larger__item.column__item"));
 });
 
